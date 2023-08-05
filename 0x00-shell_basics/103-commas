@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1 --group-directories-first | sort -k 1,1 -k 1.1n,1.1 | awk '{ORS=NR%2?",":"/\n"}1'
+ls -ap1 | sed -E ':a; s/([0-9])[^,/\n]*/\1\n&/g; ta' | sort -k1,1 -k2 | tr '\n' ',' && echo
