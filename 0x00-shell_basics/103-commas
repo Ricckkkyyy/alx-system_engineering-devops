@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | sed -E ':a; s/([0-9])[^,/\n]*/\1\n&/g; ta' | sort -k1,1 -k2 | tr '\n' ',' && echo
+ls -mpa
