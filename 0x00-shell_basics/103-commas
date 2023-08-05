@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -mpa
+ls -A1 --group-directories-first | sort -k 1,1 -k 1.1n,1.1 | awk '{ORS=NR%2?",":"/\n"}1'
